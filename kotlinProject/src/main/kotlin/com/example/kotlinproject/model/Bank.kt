@@ -1,6 +1,11 @@
 package com.example.kotlinproject.model
 
-data class Bank(val accountNumber: String, val trust: Double, val transactionFee: Int) {
+import com.fasterxml.jackson.annotation.JsonProperty
 
-
-}
+data class Bank(
+    @JsonProperty("account_number")
+    val accountNumber: String,
+    @JsonProperty("trust")
+    val trust: Double,
+    @JsonProperty("default_transaction_fee")
+    val transactionFee: Int)
